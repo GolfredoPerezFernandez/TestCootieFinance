@@ -3484,6 +3484,11 @@ if(res.status === 200) {
                         text="Update Rewards"
                         theme="colored"
                       />   
+					  
+                      <Box style={{ height: 10 }} />
+						<Text   fontSize="sm"  color={"#818289"} textAlign={'center'}>
+						{'Old Staking'}
+					  </Text>
 					  <Box style={{ height: 10 }} />
 					    <Button
                           disabled={user ? false : true}
