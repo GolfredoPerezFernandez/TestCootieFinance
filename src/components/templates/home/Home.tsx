@@ -2970,25 +2970,25 @@ if(res.status === 200) {
 					
 				</Box>
 
+			
 				<Box style={{
 						backgroundColor:'#18192D',
 						padding:50,
 						borderWidth:5,
 						borderColor:'#21BF96',
-						height:700,
+						height:props.width<1200?740:780,
+						marginLeft:-140,
 						borderRadius:10,
-						minWidth:300,
-                        alignSelf: props.width<1000?'center':'flex-start',
-                        width: props.width<1000?'60%':'25%', 
+                        alignSelf: props.width<800?'center':'flex-start',
+                        width: props.width<800?'50%':'25%', 
 						}}>
-							
-				  <Heading   fontSize="2xl" marginBottom={4} textAlign={'center'}>
-				  NFT STAKE 
-                     </Heading>
-				  <Heading   fontSize="2xl" marginBottom={4} textAlign={'center'}>
-				  COOTIE V2
-                     </Heading>
 
+<Heading   fontSize="2xl" marginBottom={4} textAlign={'center'}>
+				 NEW STAKING
+                     </Heading>
+				  <Heading   fontSize="2xl" marginBottom={4} textAlign={'center'}>
+				  COOTIES V2
+                     </Heading>
 					 <Image
       src={'https://bafybeiegrk26ssjtlw27j5xx5cm3mxz5bwsdndviuh3a7jwd6creq6gr6a.ipfs.w3s.link/locker-dynamic-premium.png'}
       marginLeft={"35%"}
@@ -2998,16 +2998,12 @@ if(res.status === 200) {
 	  marginBottom={5}
       alt="Ultimate"
     />
-	
-	<Text   fontSize="sm"   color={"#818289"} textAlign={'center'}>
-	{'Under Maintenance'}
-  </Text>
 					 <HStack mt={2} alignItems={"flex-start"} justifyContent={"center"}>
 					<Text   fontSize="sm" mb={2}  textAlign={'center'}>
 					  {'Rewards'}
 					</Text>
 					<Text   fontSize="sm" mb={2} color={'#21BF96'} textAlign={'center'}>
-					  {' 0.00035 '}
+					  {Moralis.Units.FromWei(rewardsNew)}
 					</Text>
 					<Text   fontSize="sm" mb={2}  textAlign={'center'}>
 					  {'COOT/sec '}
@@ -3015,7 +3011,7 @@ if(res.status === 200) {
 					
 					</HStack>
 										
-	<HStack mb={6}  alignItems={"center"} justifyContent={"center"}>
+	<HStack mb={2}  alignItems={"center"} justifyContent={"center"}>
 	<Text   fontSize="sm"   color={"#818289"} textAlign={'center'}>
 	{'NFTS STAKED'}
   </Text>
@@ -3033,14 +3029,14 @@ if(res.status === 200) {
 	</Text>
    
    </HStack>
-                      {/*  <Button
+                    <Button
                         disabled={user ? false : true}
-                        onClick={handleDepositStakingV2}
+                        onClick={handleDepositStakingV2New}
                         isFullWidth={true}
                         color="blue"
                         text="Stake All V2 Cooties"
                         theme="primary"
-                      /> */}
+                      />
 					     <HStack justifyContent={'center'} alignItems={'flex-start'} mt={6} mb={6}>
 						
 						<VStack justifyContent={'center'} alignItems={'center'}>
@@ -3063,9 +3059,10 @@ if(res.status === 200) {
 					   
 						</VStack>
 						</HStack>
+
                         <Button
                           disabled={user ? false : true}
-                          onClick={claimRewardsStakingV2}
+                          onClick={claimRewardsStakingV2New}
                           isFullWidth={true}
 						  color="yellow"
                           text="Claim Rewards"
@@ -3074,7 +3071,7 @@ if(res.status === 200) {
 						<Box style={{ height: 10 }} />
 						<Button
 						  disabled={user ? false : true}
-						  onClick={handleWithdrawStakingV2}
+						  onClick={handleWithdrawStakingV2New}
 						  isFullWidth={true}
 						  color="blue"
 						  text="Withdraw All"
@@ -3083,13 +3080,35 @@ if(res.status === 200) {
                       <Box style={{ height: 10 }} />
                       <Button
                         disabled={user ? false : true}
-                        onClick={handleUpdateStakingV2}
+                        onClick={handleUpdateStakingV2New}
                         isFullWidth={true}
                         color="blue"
                         text="Update Rewards"
                         theme="colored"
                       />   
-					
+					  
+                      <Box style={{ height: 10 }} />
+						<Text   fontSize="sm"  color={"#818289"} textAlign={'center'}>
+						{'Old Staking'}
+					  </Text>
+					  <Box style={{ height: 10 }} />
+					    <Button
+                          disabled={user ? false : true}
+                          onClick={claimRewardsStakingV2}
+                          isFullWidth={true}
+						  color="yellow"
+                          text="Claim Old Rewards"
+                          theme="colored"
+                        />
+						<Box style={{ height: 10 }} />
+						<Button
+						  disabled={user ? false : true}
+						  onClick={handleWithdrawStakingV2}
+						  isFullWidth={true}
+						  color="blue"
+						  text="Withdraw All Old"
+						  theme="colored"
+						/>   
 				</Box>
             </VStack>
           ) : (
@@ -3382,7 +3401,7 @@ if(res.status === 200) {
 						}}>
 
 <Heading   fontSize="2xl" marginBottom={4} textAlign={'center'}>
-				 NEW STAKE NFT
+				 NEW STAKING
                      </Heading>
 				  <Heading   fontSize="2xl" marginBottom={4} textAlign={'center'}>
 				  COOTIES V2
