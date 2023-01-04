@@ -368,7 +368,7 @@ tokenIds=[...tokenIds,res3[i][1]];
     };
     const res2: any = await Moralis.executeFunction(sendOptions1);
     await res2.wait(2);
-	handleUpdateStakingV2()
+	handleUpdateStakingV2New()
     setIsOpen(false)
 
   } catch {
@@ -1019,7 +1019,7 @@ for(let j=0;j<tokensIdsV1.length;j++){
             
           if (wait) {
           
-				handleUpdateStakingV2()
+				handleUpdateStakingV2New()
             setIsOpen(false)
 		   
           }
